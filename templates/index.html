@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+
+{% block head %}
+<title>Jackie Zhen: Software Engineer and Web Developer [Home]</title>
+{% endblock %}
+
+
+{% block body %}
+<!--<a href="dark_toggle">Night Mode</a>
+
+<div style="float:right;">            
+    <label class="switch">
+        <form method="POST">
+            <input type="checkbox" name="dark_toggle" href="dark_toggle">
+            <span class="slider round"></span>
+        </form>
+    </label>
+</div>
+-->
+<div style="margin-bottom: 100px    ">
+    {% if session['logged_in'] == True %}
+        <h3 class="cur_user_display">Welcome User: {{ session.username }}</h3>
+        <h3 class="logout_btn"><a href="logout">Logout</a></h3>
+    {% else %}
+        <h3 class="login_btn"><a href="login.html">Login</a></h3>
+    {% endif %}
+    <h2><a href="new_article.html" class="new_article_btn">Add New Article</a></h2>
+    
+    {% for article in articles %}
+        <div class="article_info">
+            <!-- use a <span> every now and then -->
+            <hr></hr>
+            <div style="clear: both">
+                <h3 style="float:left">{{ article.title }}</h3>
+
+                <h3 class="delete_edit_buttons">
+                    <a href="/delete/{{ article.id }}">delete</a>
+                    |
+                    <a href="/edit/{{ article.id }}">edit</a>
+                </h3>
+
+            </div>
+
+            <div style="clear: both">
+                
+                <h4 style="float: left">{{ article.tags }}</h4>
+                <h4 style="float: right">{{ article.date_created|apply_est }}</h4>
+            </div>
+        </div>
+        <br>
+        
+        <div class="content_div">
+            {{ article.content|safe }}
+        </div>
+
+        <br>
+        
+    {% endfor %}
+</div>
+
+{% endblock %}

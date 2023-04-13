@@ -1,0 +1,157 @@
+{% extends 'base_nocss.html' %}
+
+
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/wd.css') }}">
+<script type="text/javascript" src="{{ url_for('static', filename='scripts.js') }}"></script>
+{% endblock %}
+
+
+
+{% block body %}
+<div id="grid_div">
+    <div class="griddiv1">
+        <div class="titlewrapper">
+            <h1 id="title">Weather Dasher</h1>
+        </div>
+    </div>
+    <div class="griddiv2">
+        
+        <div>
+            <form method="POST" id="searchform">
+                <label id="input_label">Enter a City:</label><br>
+                <input type="text" id="input_field" name="city_field">
+                <input type="submit" id="input_submit" method="POST">
+                <script>
+                    function reset_form() {
+                        document.getElementById("searchform").reset();
+                    }
+                </script>
+            </form>
+        </div>
+        
+    </div>
+    <div class="griddiv3">
+        {% if wd != None %}
+        <div id="cur_day_wrapper">
+            <div id="cur_day_div">    
+                <h4 id="placedate">Location: {{ wd[0]["city"] }}   {{ wd[0]["date"].strftime("%m/%d/%Y") }}</h4>
+                <label id="temp">Temperature: {{ wd[0]["temp"] }}°C</label>
+                <label id="humidity">Humidity: {{ wd[0]["humidity"] }}%</label>
+                <label id="wind">Wind Speed: {{ wd[0]["wind"] }}km/h</label>
+                <label id="uv">UV Index: {{ wd[0]["uv"] }}</label>
+            </div>
+
+            <div id="icon_div">
+                <img id = "cur_day_img" src="https://openweathermap.org/img/wn/{{ wd[0]['icon_code'] }}@2x.png">
+            </div>
+        </div>
+        {% else %}
+        <div id="cur_day_wrapper">
+            <div id="cur_day_div">    
+                <h4 id="placedate">Location: </h4>
+                <label id="temp">Temperature: </label>
+                <label id="humidity">Humidity: </label>
+                <label id="wind">Wind Speed: </label>
+                <label id="uv">UV Index: </label>
+            </div>
+
+            <div id="icon_div">
+                <img></img>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+    <div class="griddiv4">
+        <div class="searchwrapper">
+            {% if ps != None %}
+                <form id="historyform" method="POST">
+                {% for search in ps %}
+                    <div class="historydiv"><input type="submit" value="{{search}}" name="historybuttonfield"></div>
+                {% endfor %}
+                </form>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="griddiv5">
+        <div>
+            <h4 id="forecasttitle">5 Day Forecast</h4>
+            <div class="forecastwrapper">
+                {% if wd != None %}
+                <div class="forecastdiv1">
+                    <div>
+                        <label>{{ wd[1]["date"].strftime("%m/%d/%Y") }}</label>
+                        <img src="https://openweathermap.org/img/wn/{{ wd[1]['icon_code'] }}@2x.png"> <!--replace the 01d with the code for your weather condition-->
+                        <label>Temp: {{ wd[1]["temp"] }}</label>
+                        <label>Humidity: {{ wd[1]["humidity"] }}</label>
+                    </div>
+                </div>
+                <div class="forecastdiv2">
+                    <div>
+                        <label>{{ wd[2]["date"].strftime("%m/%d/%Y") }}</label>
+                        <img src="https://openweathermap.org/img/wn/{{ wd[2]['icon_code'] }}@2x.png">
+                        <label>Temp: {{ wd[2]["temp"] }}</label>
+                        <label>Humidity: {{ wd[2]["humidity"] }}</label>
+                    </div>
+                </div>
+                <div class="forecastdiv3">
+                    <div>
+                        <label>{{ wd[3]["date"].strftime("%m/%d/%Y") }}</label>
+                        <img src="https://openweathermap.org/img/wn/{{ wd[3]['icon_code'] }}@2x.png">
+                        <label>Temp: {{ wd[3]["temp"] }}</label>
+                        <label>Humidity: {{ wd[3]["humidity"] }}</label>
+                    </div>
+                </div>
+                <div class="forecastdiv4">
+                    <div>
+                        <label>{{ wd[4]["date"].strftime("%m/%d/%Y") }}</label>
+                        <img src="https://openweathermap.org/img/wn/{{ wd[4]['icon_code'] }}@2x.png">
+                        <label>Temp: {{ wd[4]["temp"] }}</label>
+                        <label>Humidity: {{ wd[4]["humidity"] }}</label>
+                    </div>
+                </div>
+                <div class="forecastdiv5">
+                    <div>
+                        <label>{{ wd[5]["date"].strftime("%m/%d/%Y") }}</label>
+                        <img src="https://openweathermap.org/img/wn/{{ wd[5]['icon_code'] }}@2x.png">
+                        <label>Temp: {{ wd[5]["temp"] }}</label>
+                        <label>Humidity: {{ wd[5]["humidity"] }}</label>
+                    </div>
+                </div>
+                {% else %}
+                    {% for x in range(5) %}
+                    <div>
+                        <div>
+                            <label>Date: </label>
+                            <label>Icon: </label>
+                            <label>Temp: </label>
+                            <label>Humidity: </label>
+                        </div>
+                    </div>
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--
+<div class="historydiv1"><div>placeholder 1a</div></div>
+<div class="historydiv2"><div>placeholder 2a</div></div>
+<div class="historydiv3"><div>placeholder 3a</div></div>
+<div class="historydiv4"><div>placeholder 4a</div></div>
+<div class="historydiv5"><div>placeholder 5a</div></div>
+-->
+
+<!--
+    <h1 id="title">Weather Dasher</h1>
+
+    <form method="POST">
+        <label>Enter your city:</label><br>
+        <input type="text" name="city_field">
+        <input type="submit" method="POST">
+    </form>
+-->
+{% endblock %}

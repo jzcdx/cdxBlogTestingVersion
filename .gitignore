@@ -1,0 +1,14 @@
+env3
+__pycache__/
+bcrypt_test.py
+test_passwords.txt
+misc
+
+*.zip
+*.rar
+*.db
+!instance/*.db
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml

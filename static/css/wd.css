@@ -1,0 +1,244 @@
+body {
+    background: black;
+    height: 100vh;
+    margin: 0rem;
+    font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif
+}
+
+body * {
+    color:white;
+}
+
+#grid_div { /* the grid itself */
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: 20vh 20vh 20vh 20vh 20vh;
+    margin-bottom:0px;
+}
+
+#grid_div > div {
+    background-color: rgb(20, 20, 20);
+    color:black;
+    border: 1px solid white
+}
+
+.griddiv1 { /*Title*/
+    grid-area: 1 / 1 / span 1 / span 4;
+}
+
+.griddiv2 { /* search bar (centering this is literal sorcery) */ 
+    grid-area: 2 / 1 / span 1 / span 1;
+
+    /*these 3 lines are magic */
+    display: flex;
+    justify-content: center;
+    
+    align-items: center;
+}
+
+.griddiv2 > div {
+    display: inline-block;
+    margin:0px;
+    margin-bottom:30px;
+}
+
+.griddiv2 > div > label {
+    display: inline-block;
+    font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+    font-size:30px;
+}
+
+.griddiv2 > div > form > #input_field {
+    display: inline-block;
+    font-size:30px;
+    color: black;
+}
+.griddiv2 > div > form > #input_submit {
+    color: black;
+    display: inline-block;
+    font-size:30px;
+}
+
+
+
+
+.griddiv3 { /* cur location weather for the day*/
+    grid-area: 2 / 2 / span 2 / span 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:0px;
+    margin:0px;
+}
+
+#cur_day_wrapper {
+    border-color: white;
+    border-style:solid;
+    border-width:1px;
+    height: 70%;
+    width: 90%;
+    background-color:#332F2E;
+
+    display:flex;
+    flex-direction: row;
+}
+
+#cur_day_div {
+    display: flex;
+    flex-direction: column;
+    padding:15px;
+    margin: 0px;
+}
+
+#cur_day_div * {
+    margin: 0px;
+    padding: 0px;  
+}
+
+
+#placedate {
+    font-size: 5.9vh;
+}
+
+#cur_day_div > label {
+    font-size: 3.9vh;
+}
+
+#icon_div {
+    height: 100%;
+    width: 10%;
+}
+
+#cur_day_img {
+    width:100%;
+}
+
+
+
+
+
+.griddiv4 { /* search history */
+    grid-area: 3 / 1 / span 3 / span 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.searchwrapper {
+    padding: 0px;
+    height: 90%;
+    width: 90%;
+    /*background-color: rgb(108, 38, 38);*/
+    /*align-items: flex-start;*/
+}
+
+#historyform {
+    height:100%;
+    width:100%;
+
+    display: flex;
+    justify-content: flex-start;
+    /*align-items: flex-start;*/
+    flex-direction:column;
+}
+
+#historyform > div { /*contains jinja (historydiv)*/ 
+    height: 20%;
+    width: 100%;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    background-color: rgb(237, 237, 237);
+
+    display: flex;
+    justify-content: left;
+    /*align-items: flex-start;*/
+}
+
+.historydiv > input {
+    height:100%;
+    width:100%;
+    background-color: rgb(237, 237, 237);
+    
+    padding:0px;
+    font-size: 30px;
+    color:black;
+    
+}
+
+
+.griddiv5 { /* 5 day forecast for cur day*/
+    grid-area: 4 / 2 / span 2 / span 3;
+    
+}
+
+.griddiv5 > div {
+    width:100%;
+    height:100%;
+}
+
+#forecasttitle {
+    font-size:30px;
+    margin-left:1%;
+    margin-top:1%;
+    margin-bottom:1%;
+}
+
+.forecastwrapper {
+    display: flex;
+    height: 100%;
+    
+}
+
+.forecastwrapper > div {
+    width: 19%;
+    height: 80%;
+    background-color: black;
+    border-style:solid;
+    border-width:1px;
+    border-color:white;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.forecastwrapper > div > div > label {
+    font-size: 30px;
+}
+
+.forecastwrapper > div > div > img {
+    max-width:30%;
+}
+
+.forecastwrapper > div > div {
+    margin:3%;
+    width:100%;
+    height:100%;
+    display:flex;
+    justify-content:left;
+    flex-direction:column;
+}
+
+.titlewrapper {
+    display: flex;
+
+    height:100%;
+
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    background-color: black;
+}
+
+#title {
+    font-size: 70px;
+    margin:0px;
+    margin-left: 50px;
+    font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+}
+
+#trademark {
+    /*visibility: hidden;*/
+    display: none;
+}
+

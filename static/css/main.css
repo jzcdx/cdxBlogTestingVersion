@@ -1,0 +1,230 @@
+body, html {
+    /*margin: 25px 50px;*/
+    line-height: 20px; /*probably important, fuck with this as neccesary*/
+
+    margin-left: 2.6vw;
+    margin-right: 2.6vw;
+    font-family: sans-serif;
+    /*night mode settings*/
+    /*background-color: black;
+    color: white; */
+    
+}
+
+h1 {
+    /*font-size: 75px;*/
+    font-size: 3.9vw;
+    margin-left: 2.6vw;
+    margin-right: 2.6vw;
+
+    margin-top: 1.5vh;
+}
+
+@media screen and (max-width: 800px) {
+  h1 {
+    font-size:7.7vw; /* The width is 100%, when the viewport is 800px or smaller */
+    margin-bottom: 3vh;
+    margin-top: 3vh;
+    /*
+    margin-left: 0vw;
+    margin-right: 0vw;*/
+  }
+  
+  .new_article_btn, .login_btn {
+    display: none;
+  }
+}
+
+
+h3 { /*article title*/
+    font-size: 30px;
+    margin-bottom: 0.26vh;
+    margin-top: 0.78vh;
+    /*margin-top: 50px;*/ /*for when there is no hr*/
+    
+
+    padding-bottom: 0px;
+    padding-top: 0px;
+}
+
+@media screen and (max-width: 800px) {
+  h3 {
+    font-size: 25px;
+    margin-bottom: 0vh;
+    margin-top: 0.78vh;
+    /*margin-top: 50px;*/ /*for when there is no hr*/
+    
+
+    padding-bottom: 0px;
+    padding-top: 0px;
+  }
+ 
+}
+
+h4 { /*article tags*/
+    font-size: 15px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+
+    padding-bottom: 0px;
+    padding-top: 0px;
+}
+
+a { 
+    color: inherit; 
+    text-decoration: none;
+} 
+
+hr {
+    margin-top: 40px;
+}
+
+
+
+
+.article_info {
+    text-align:left;
+}
+
+
+@media screen and (max-width: 800px) {
+  .article_info {
+    margin-bottom:25px;
+  }
+}
+p {
+    
+    margin-top: 15px;
+    margin-bottom: 0px;
+    text-align: left;
+    text-indent: 30px;
+}
+
+.content_div {
+    margin-top: 15px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+}
+
+
+
+div {
+    text-align:center
+}
+textarea {
+    resize: none
+}
+
+
+
+
+table, td, th {
+    border: 1px solid #aaa;
+}
+
+table {
+    margin-top: 50px;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th {
+    height: 30px;
+}
+
+td {
+    text-align: center;
+    padding: 5px;
+}
+
+.delete_edit_buttons {
+    padding-left: 5px;
+    padding-right: 5px;
+
+    border-style: solid;
+    border-width: 1px;
+    
+    float:right; 
+    font-size:15px;
+}
+
+
+.cur_user_display {
+    font-size:20px;
+}
+
+.login_btn, .logout_btn {
+    font-size:20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+.nav_list {
+  display: flex;
+  justify-content: right;
+
+  list-style-type: none;
+  overflow: hidden;
+}
+
+
+.nav_anchor {
+
+  font-size: 20px;
+  color: white;
+  display: block;
+  padding: 15px 30px;
+  
+  
+  background-color: #1b1b1b;
+}
+
+@media screen and (max-width: 800px) {
+  .nav_list {
+    margin-top: 10px;
+    margin-bottom:0px;
+    list-style-type: none;
+  }
+
+  .nav_anchor {
+    font-size: 15px;
+    color: white;
+    padding: 5px 10px;
+    margin:0px;
+
+    background-color: #1b1b1b;
+  }
+}
+
+.tag_insertions {
+  display:flex;
+  flex-direction:row;
+  
+  justify-content: flex-end;/*
+  text-align:right;*/
+  margin-right:500px;
+  margin-top:0px;
+}
+
+.tag_insertions > div {
+  float:right;
+}
+
+.tag_insertions * {
+  width:50px;
+  margin-top:10px;
+}
+
+.article_submit {
+  margin-bottom: 0px;
+  display:inline;
+}

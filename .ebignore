@@ -1,0 +1,8 @@
+env3
+__pycache__/
+bcrypt_test.py
+test_passwords.txt
+misc
+
+*.zip
+*.rar

@@ -1,0 +1,58 @@
+{% extends 'base_nocss.html' %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/profile.css') }}">
+<script type="text/javascript" src="{{ url_for('static', filename='scripts.js') }}"></script>
+<title>Jackie Zhen: Software Engineer and Web Developer [Profile]</title>
+{% endblock %}
+
+
+
+{% block body %}
+
+<div class="wrapper_div">
+
+    <div class="text_div">
+        <h2 class="bio_title">Jackie Zhen <br><span style="color: black">Software Engineer<span></h2>
+        <!--<p class="bio_content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et consectetur quam, in luctus felis. Vivamus sed nisl eros. Morbi tincidunt dignissim congue. Quisque tincidunt sem nec nibh luctus, vitae porta enim sodales. Maecenas ac malesuada erat. Praesent eleifend euismod elit, ut tincidunt libero rhoncus vel. Pellentesque ut fermentum risus. Praesent sodales magna vitae tellus tristique, sit amet porta magna dignissim. Sed libero ante, hendrerit ut fringilla malesuada, suscipit quis turpis. Quisque vitae euismod ex. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nulla felis tortor, ullamcorper vel ante vel, porttitor imperdiet libero. Suspendisse efficitur sagittis tellus pharetra tempus egestas.</p>
+        -->
+        <p class="bio_content">
+        Hi, I’m Jackie! I’m a Toronto based (Willing to relocate) Software Engineer and a full stack Web Developer. I first started coding in 2017, but I also enjoy blogging, long walks, voice acting and playing Valorant. Currently I’m looking for work in the tech industry. Feel free to check out my work (portfolio and github) or to reach out via email or my socials in the links down below.
+        </p>
+        
+        <p class="bio_content">
+        This site was written with Python (Flask) and deployed with AWS on Elastic Beanstalk with a SQLite database for the blog portion. I’ve been coding in python since 2019 and I would consider it to be my primary language. I love python for its flexibility and ease of use, though I’m always ready to pick up any new technologies if they help me accomplish my goals. 
+        </p>
+
+        <div class="links">
+            <ul>
+                <li><a class="bio_links" href="/">blog</a></li>
+                <li><a class="bio_links" href="https://github.com/MicroOptimization" target="_blank">portfolio</a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="image_div">
+        <img src="static/images/portrait_resized.jpg" alt="Jackie Zhen's Portrait" class="portrait" width="40%" height="40%">
+    </div>
+
+</div>
+
+
+<div class="contact_title">
+    Contact Me:
+</div>
+<div class="contact_div">
+    <a href="#email_div" onclick="showEmail();">Email</a>
+    <a href="https://www.linkedin.com/in/jackie-zhen-160a811a7/" target="_blank">Linkedin</a>
+    <a href="https://github.com/MicroOptimization" target="_blank">Github</a>
+    <a href="https://mobile.twitter.com/jackie_zhen" target="_blank">Twitter</a>
+</div>
+
+<div class="email_div">
+    <label id="email_label">Email: Jackiezhen538@gmail.com</label>
+</div>
+<br>
+
+
+{% endblock %}
